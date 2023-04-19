@@ -1,0 +1,55 @@
+package Basic;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class Shivacon {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe" );
+		WebDriver driver= new ChromeDriver();
+		
+		driver.get("https://www.shivaconceptsolution.com/backupmain/test.html");
+		driver.getTitle();
+		driver.manage().window().maximize();
+		driver.findElement(By.id("txt1")).sendKeys("shiv21");
+		driver.findElement(By.name("txt2")).sendKeys("shivangi");
+		driver.findElement(By.name("txt3")).sendKeys("shiva@gmai.com");
+	//	driver.findElement(By.cssSelector("input[placeholder=enter date]");
+		
+		driver.findElement(By.name("txt4")).sendKeys("786689");
+		//driver.findElement(By.linkText("Click"));
+		//driver.findElement(By.partialLinkText("shivaconcept")).click();
+		driver.findElement(By.className("abc")).sendKeys("test code");
+		driver.findElement(By.id("b")).sendKeys("test code1");
+
+		//By Css selector  ::Radio buttons
+        //driver.findElement(By.cssSelector("input[value='Male']")).click();
+       // driver.findElement(By.cssSelector("input[value='FeMale']")).click();
+		
+		// by Xpath: Radio buttons:
+        driver.findElement(By.xpath("//input[@value='FeMale']")).click();
+        driver.findElement(By.tagName("a")).click();
+        driver.navigate().back();  // bcak to initial page
+        
+        //checkbox
+        driver.findElement(By.cssSelector("input[type=checkbox]")).click();
+        driver.findElement(By.cssSelector("input[value=CPP]")).click();
+        
+        //drop down menu:
+        Select s= new Select(driver.findElement(By.name("c")));
+        s.selectByValue("Web Driver");	
+        s.deselectAll();
+        
+       
+        
+
+
+
+
+}
+}
