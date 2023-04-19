@@ -1,0 +1,29 @@
+package Basic;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;  
+import org.openqa.selenium.chrome.ChromeDriver; 
+import org.openqa.selenium.support.ui.Select;
+
+
+
+public class Dropdown
+{
+
+	public static void main(String[] args) 
+	{
+	WebDriver driver= new ChromeDriver();
+	System.setProperty("webdriver.chrome.driver", "C:/Users/RST/Documents/Teast.html");
+	driver.get("file:///C:/Users/RST/Documents/Teast.html");
+	driver.manage().window().maximize();
+	
+	Select s= new Select(driver.findElement(By.name("country")));
+		//s.selectByValue("India");
+		//s.selectByIndex(1); // starts from 0.
+	if(s.isMultiple())
+	{
+		System.out.println("yes");
+	}
+		
+	}
+
+}
