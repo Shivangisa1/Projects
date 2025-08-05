@@ -34,7 +34,7 @@ public class Shivacon {
 		// by Xpath: Radio buttons:
         driver.findElement(By.xpath("//input[@value='FeMale']")).click();
         driver.findElement(By.tagName("a")).click();
-        driver.navigate().back();  // bcak to initial page
+        driver.navigate().back();  // back to initial page
         
         //checkbox
         driver.findElement(By.cssSelector("input[type=checkbox]")).click();
